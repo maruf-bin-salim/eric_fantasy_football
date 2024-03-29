@@ -1,0 +1,2931 @@
+{
+  "playerID": 1201,
+  "name": "Edgar González",
+  "nickname": "Edgar",
+  "position": "Defensa",
+  "status": "ok",
+  "positionID": 2,
+  "averagePoints": 3.3,
+  "marketValue": 546365,
+  "teamID": 1,
+  "image": "/playerImages/1201.png",
+  "points": 66,
+  "marketValues": [
+    {
+      "lfpId": 1001201,
+      "marketValue": 8000000,
+      "date": "2023-07-13T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 7703782,
+      "date": "2023-08-11T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 7421089,
+      "date": "2023-08-12T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 7218223,
+      "date": "2023-08-13T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 7055628,
+      "date": "2023-08-14T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6888278,
+      "date": "2023-08-15T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6712779,
+      "date": "2023-08-16T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6549808,
+      "date": "2023-08-17T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6418161,
+      "date": "2023-08-18T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6269501,
+      "date": "2023-08-19T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6115407,
+      "date": "2023-08-20T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 6049378,
+      "date": "2023-08-21T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5974805,
+      "date": "2023-08-22T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5905249,
+      "date": "2023-08-23T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5834951,
+      "date": "2023-08-24T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5774555,
+      "date": "2023-08-25T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5710297,
+      "date": "2023-08-26T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5595701,
+      "date": "2023-08-27T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5447639,
+      "date": "2023-08-28T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5295280,
+      "date": "2023-08-29T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 5141477,
+      "date": "2023-08-30T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4971850,
+      "date": "2023-08-31T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4811003,
+      "date": "2023-09-01T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4659922,
+      "date": "2023-09-02T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4515802,
+      "date": "2023-09-03T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4379567,
+      "date": "2023-09-04T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4241992,
+      "date": "2023-09-05T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 4114299,
+      "date": "2023-09-06T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3994657,
+      "date": "2023-09-07T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3880080,
+      "date": "2023-09-08T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3773465,
+      "date": "2023-09-09T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3671816,
+      "date": "2023-09-10T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3569558,
+      "date": "2023-09-11T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3475041,
+      "date": "2023-09-12T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3387723,
+      "date": "2023-09-13T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3305696,
+      "date": "2023-09-14T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3238028,
+      "date": "2023-09-15T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3171928,
+      "date": "2023-09-16T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3085797,
+      "date": "2023-09-17T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 3002418,
+      "date": "2023-09-18T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2934679,
+      "date": "2023-09-19T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2871889,
+      "date": "2023-09-20T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2816671,
+      "date": "2023-09-21T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2769192,
+      "date": "2023-09-22T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2731778,
+      "date": "2023-09-23T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2667109,
+      "date": "2023-09-24T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2605175,
+      "date": "2023-09-25T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2564654,
+      "date": "2023-09-26T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2527583,
+      "date": "2023-09-27T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2470870,
+      "date": "2023-09-28T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2420496,
+      "date": "2023-09-29T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2380437,
+      "date": "2023-09-30T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2318312,
+      "date": "2023-10-01T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2254472,
+      "date": "2023-10-02T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2193281,
+      "date": "2023-10-03T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2130516,
+      "date": "2023-10-04T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2080234,
+      "date": "2023-10-05T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2037413,
+      "date": "2023-10-06T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 2000194,
+      "date": "2023-10-07T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1946077,
+      "date": "2023-10-08T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1891911,
+      "date": "2023-10-09T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1838552,
+      "date": "2023-10-10T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1789223,
+      "date": "2023-10-11T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1740326,
+      "date": "2023-10-12T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1694109,
+      "date": "2023-10-13T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1648501,
+      "date": "2023-10-14T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1604275,
+      "date": "2023-10-15T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1563160,
+      "date": "2023-10-16T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1523878,
+      "date": "2023-10-17T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1486145,
+      "date": "2023-10-18T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1452687,
+      "date": "2023-10-19T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1420482,
+      "date": "2023-10-20T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1393471,
+      "date": "2023-10-21T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1360874,
+      "date": "2023-10-22T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1328372,
+      "date": "2023-10-23T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1295176,
+      "date": "2023-10-24T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1261382,
+      "date": "2023-10-25T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1227483,
+      "date": "2023-10-26T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1195984,
+      "date": "2023-10-27T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1167516,
+      "date": "2023-10-28T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1141016,
+      "date": "2023-10-29T00:00:00+02:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1115042,
+      "date": "2023-10-30T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1088516,
+      "date": "2023-10-31T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1062139,
+      "date": "2023-11-01T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1037146,
+      "date": "2023-11-02T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 1013178,
+      "date": "2023-11-03T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 990601,
+      "date": "2023-11-04T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 971767,
+      "date": "2023-11-05T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 953051,
+      "date": "2023-11-06T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 934011,
+      "date": "2023-11-07T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 914596,
+      "date": "2023-11-08T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 895347,
+      "date": "2023-11-09T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 878422,
+      "date": "2023-11-10T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 865511,
+      "date": "2023-11-11T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 851129,
+      "date": "2023-11-12T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 836326,
+      "date": "2023-11-13T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 820509,
+      "date": "2023-11-14T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 804192,
+      "date": "2023-11-15T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 789474,
+      "date": "2023-11-16T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 775898,
+      "date": "2023-11-17T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 763483,
+      "date": "2023-11-18T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 752673,
+      "date": "2023-11-19T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 742757,
+      "date": "2023-11-20T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 733005,
+      "date": "2023-11-21T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 723735,
+      "date": "2023-11-22T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 715414,
+      "date": "2023-11-23T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 707005,
+      "date": "2023-11-24T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 701066,
+      "date": "2023-11-25T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 696690,
+      "date": "2023-11-26T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 691550,
+      "date": "2023-11-27T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 686242,
+      "date": "2023-11-28T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 678200,
+      "date": "2023-11-29T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 670253,
+      "date": "2023-11-30T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 662691,
+      "date": "2023-12-01T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 655372,
+      "date": "2023-12-02T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 651468,
+      "date": "2023-12-03T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 647216,
+      "date": "2023-12-04T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 641273,
+      "date": "2023-12-05T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 633873,
+      "date": "2023-12-06T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 626663,
+      "date": "2023-12-07T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 621194,
+      "date": "2023-12-08T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 619067,
+      "date": "2023-12-09T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 615337,
+      "date": "2023-12-10T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 611473,
+      "date": "2023-12-11T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 606581,
+      "date": "2023-12-12T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 600872,
+      "date": "2023-12-13T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 594253,
+      "date": "2023-12-14T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 588651,
+      "date": "2023-12-15T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 582631,
+      "date": "2023-12-16T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 580678,
+      "date": "2023-12-17T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 578464,
+      "date": "2023-12-18T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 573763,
+      "date": "2023-12-19T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 570208,
+      "date": "2023-12-20T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 565207,
+      "date": "2023-12-21T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 562135,
+      "date": "2023-12-22T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 561829,
+      "date": "2023-12-23T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 561182,
+      "date": "2023-12-24T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 557495,
+      "date": "2023-12-25T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 554632,
+      "date": "2023-12-26T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 551939,
+      "date": "2023-12-27T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 549276,
+      "date": "2023-12-28T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 547069,
+      "date": "2023-12-29T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 545518,
+      "date": "2023-12-30T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 545232,
+      "date": "2023-12-31T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 546037,
+      "date": "2024-01-01T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 547228,
+      "date": "2024-01-02T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 549111,
+      "date": "2024-01-03T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 548468,
+      "date": "2024-01-04T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 546330,
+      "date": "2024-01-05T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 542003,
+      "date": "2024-01-06T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 538259,
+      "date": "2024-01-07T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 534579,
+      "date": "2024-01-08T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 531114,
+      "date": "2024-01-09T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 529118,
+      "date": "2024-01-10T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 527758,
+      "date": "2024-01-11T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 527126,
+      "date": "2024-01-12T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 526367,
+      "date": "2024-01-13T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 527757,
+      "date": "2024-01-14T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 528999,
+      "date": "2024-01-15T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 529129,
+      "date": "2024-01-16T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 528271,
+      "date": "2024-01-17T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 527453,
+      "date": "2024-01-18T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 527694,
+      "date": "2024-01-19T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 528482,
+      "date": "2024-01-20T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 531139,
+      "date": "2024-01-21T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 533464,
+      "date": "2024-01-22T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 532532,
+      "date": "2024-01-23T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 548169,
+      "date": "2024-01-24T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 564646,
+      "date": "2024-01-25T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 582335,
+      "date": "2024-01-26T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 602284,
+      "date": "2024-01-27T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 599324,
+      "date": "2024-01-28T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 595955,
+      "date": "2024-01-29T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 591027,
+      "date": "2024-01-30T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 584666,
+      "date": "2024-01-31T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 579137,
+      "date": "2024-02-01T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 574009,
+      "date": "2024-02-02T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 570372,
+      "date": "2024-02-03T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 568363,
+      "date": "2024-02-04T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 566228,
+      "date": "2024-02-05T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 562181,
+      "date": "2024-02-06T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 556722,
+      "date": "2024-02-07T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 551376,
+      "date": "2024-02-08T00:00:00+01:00",
+      "bids": 0
+    },
+    {
+      "lfpId": 1001201,
+      "marketValue": 546365,
+      "date": "2024-02-09T00:00:00+01:00",
+      "bids": 0
+    }
+  ],
+  "lastMarketChange": -5011,
+  "previousMarketValue": 551376,
+  "teamName": "UD Almería",
+  "stats": [
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        7,
+        1
+      ],
+      "effective_clearance": [
+        5,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        9,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 23,
+      "won_contest": [
+        1,
+        0
+      ],
+      "yellow_card": [
+        1,
+        -1
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        5,
+        1
+      ],
+      "effective_clearance": [
+        2,
+        0
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        0
+      ],
+      "mins_played": [
+        56,
+        1
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        9,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": -2,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 22,
+      "won_contest": [
+        1,
+        0
+      ],
+      "yellow_card": [
+        1,
+        -1
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        4,
+        0
+      ],
+      "effective_clearance": [
+        8,
+        2
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        1,
+        6
+      ],
+      "goals_conceded": [
+        3,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        8,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 7,
+      "total_scoring_att": [
+        1,
+        0
+      ],
+      "week": 21,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        1,
+        -1
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        4,
+        0
+      ],
+      "effective_clearance": [
+        2,
+        0
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        0,
+        3
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        63,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        1,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 6,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 20,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        4,
+        0
+      ],
+      "effective_clearance": [
+        3,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        1,
+        0
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        2
+      ],
+      "mins_played": [
+        82,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        15,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 4,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 19,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        3,
+        0
+      ],
+      "effective_clearance": [
+        1,
+        0
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        1,
+        6
+      ],
+      "goals_conceded": [
+        3,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        7,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 7,
+      "total_scoring_att": [
+        1,
+        0
+      ],
+      "week": 18,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        6,
+        1
+      ],
+      "effective_clearance": [
+        4,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        0,
+        3
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        3
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        9,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 9,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 17,
+      "won_contest": [
+        1,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        2,
+        0
+      ],
+      "effective_clearance": [
+        2,
+        0
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        0
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        9,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": -1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 16,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        7,
+        1
+      ],
+      "effective_clearance": [
+        5,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        0,
+        3
+      ],
+      "isInIdealFormation": true,
+      "marca_points": [
+        -1,
+        3
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        5,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 11,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 15,
+      "won_contest": [
+        2,
+        1
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        3,
+        0
+      ],
+      "effective_clearance": [
+        3,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        7,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 14,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        1,
+        -1
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        0,
+        0
+      ],
+      "effective_clearance": [
+        6,
+        2
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        3,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        0
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        8,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 13,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        2,
+        0
+      ],
+      "effective_clearance": [
+        6,
+        2
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        1,
+        0
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        4,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 5,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 12,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        0,
+        0
+      ],
+      "effective_clearance": [
+        0,
+        0
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        0,
+        0
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        0
+      ],
+      "mins_played": [
+        0,
+        0
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        0,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 0,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 11,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        3,
+        0
+      ],
+      "effective_clearance": [
+        0,
+        0
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        0,
+        0
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        2
+      ],
+      "mins_played": [
+        34,
+        1
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        0,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 3,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 8,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        9,
+        1
+      ],
+      "effective_clearance": [
+        3,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        5,
+        -4
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        2
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        8,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 7,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        3,
+        0
+      ],
+      "effective_clearance": [
+        5,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        2
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        15,
+        -1
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 2,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 6,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        4,
+        0
+      ],
+      "effective_clearance": [
+        6,
+        2
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        2
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        5,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 4,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 5,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        4,
+        0
+      ],
+      "effective_clearance": [
+        3,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        0,
+        0
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        50,
+        1
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        5,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        1,
+        -2
+      ],
+      "totalPoints": 1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 3,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        5,
+        1
+      ],
+      "effective_clearance": [
+        9,
+        3
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        3,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        1
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        0,
+        0
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        2,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 5,
+      "total_scoring_att": [
+        1,
+        0
+      ],
+      "week": 2,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    },
+    {
+      "playerID": 1201,
+      "ball_recovery": [
+        3,
+        0
+      ],
+      "effective_clearance": [
+        3,
+        1
+      ],
+      "goal_assist": [
+        0,
+        0
+      ],
+      "goals": [
+        0,
+        0
+      ],
+      "goals_conceded": [
+        2,
+        -2
+      ],
+      "isInIdealFormation": false,
+      "marca_points": [
+        -1,
+        2
+      ],
+      "mins_played": [
+        90,
+        2
+      ],
+      "offtarget_att_assist": [
+        0,
+        0
+      ],
+      "own_goals": [
+        0,
+        0
+      ],
+      "pen_area_entries": [
+        0,
+        0
+      ],
+      "penalty_conceded": [
+        1,
+        -2
+      ],
+      "penalty_failed": [
+        0,
+        0
+      ],
+      "penalty_save": [
+        0,
+        0
+      ],
+      "penalty_won": [
+        0,
+        0
+      ],
+      "poss_lost_all": [
+        7,
+        0
+      ],
+      "red_card": [
+        0,
+        0
+      ],
+      "saves": [
+        0,
+        0
+      ],
+      "second_yellow_card": [
+        0,
+        0
+      ],
+      "totalPoints": 1,
+      "total_scoring_att": [
+        0,
+        0
+      ],
+      "week": 1,
+      "won_contest": [
+        0,
+        0
+      ],
+      "yellow_card": [
+        0,
+        0
+      ]
+    }
+  ],
+  "matches": [],
+  "pointsData": {
+    "totalLocalPoints": 0,
+    "totalVisitorPoints": 0,
+    "averageLocalPoints": null,
+    "averageVisitorPoints": null
+  }
+}
