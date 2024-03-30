@@ -90,6 +90,40 @@
   }
 }
 
+.markdown_div {
+  width: 60vw;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+  justify-content:center;
+  align-items: center;
+}
+
+.markdown_div>h1,
+.markdown_div>h2,
+.markdown_div>h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.markdown_div>ul {
+  padding: 50px;
+  list-style-type: circle;
+}
+
+
+.markdown_div>p,
+.markdown_div>ul>li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400px;
+  font-size: 20px;
+  line-height: 2;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -11,7 +11,14 @@ async function getAllPlayers(): Promise<{ allPlayers: players[] }> {
 
 async function getAllNews() : Promise<{ allNews: any; error: any }> {
   const { data, error } = await supabase.from('news').select('*').order('updated_at', { ascending: false });
+  // console.log(data);
   return { allNews: data, error };
+}
+
+async function getNewsById(id: string): Promise<{ news: any; error: any }>
+{
+  const { data, error } = await supabase.from('news').select('*').eq('id', id);
+  return { news: data, error };
 }
 
 async function getPaginatedPlayers({
@@ -235,4 +242,5 @@ export {
   getFinishedMatches,
   getTopPlayersByPosition,
   getAllNews,
+  getNewsById,
 };
