@@ -1,5 +1,3 @@
-// app/SomeClientComponent.js
-
 'use client';
 
 import Preview from '@/app/components/Preview/Preview';
