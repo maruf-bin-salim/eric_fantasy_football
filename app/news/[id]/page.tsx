@@ -28,17 +28,20 @@ export default function SomeClientComponent() {
     console.log(data);
 
     return (
-        <div className="max-w-lg mx-auto flex  items-center flex-col mt-8 p-4 bg-white rounded-lg ">
+        <div className="w-full mx-auto flex  items-center flex-col mt-8 p-4 bg-white rounded-lg ">
+            <div className="max-w-lg">
             <img className="w-full rounded" src={data?.cover_photo_url} />
             <h1 className="text-2xl font-bold mb-4 mt-3">{data?.title}</h1>
+
+            </div>
             <div >
                 <Preview markdown={data?.content} />
             </div>
-            <div>
+            <div className='w-full'>
                 <h2 className="text-lg font-semibold mb-2">Tags</h2>
-                <ul className="flex flex-wrap">
+                <ul className="flex flex-wrap w-full">
                     {data?.tags.map(tag => (
-                        <li key={tag.id} className="mr-2 mb-2">{tag.text}</li>
+                        <li key={tag.id} className="mr-2 mb-2 bg-gray-800 text-white rounded p-2 font-bold ">{tag.text}</li>
                     ))}
                 </ul>
             </div>
