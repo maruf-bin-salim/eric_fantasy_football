@@ -170,3 +170,59 @@
 }
 
 
+
+
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image {
+  width: 70%;
+  border-radius: 10px;
+  margin-left: 15%;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  background-color: black;
+  font-size: 2rem;
+  border-radius: 30%;
+  padding: 10px;
+
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  background-color: black;
+  font-size: 2rem;
+  border-radius: 30%;
+  padding: 10px;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
