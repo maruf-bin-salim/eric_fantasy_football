@@ -14,17 +14,20 @@ import React, { useEffect, useState } from 'react';
 
 
 const NewsSnippet = ({ newsItem }) => {
-  const { title, content, cover_photo_url } = newsItem;
+  const { title, content, cover_photo_url, created_at } = newsItem;
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
-
-
       <a href={`/news/${newsItem.id}`}>
         <img className="w-full" src={cover_photo_url} alt="News Cover" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
+        <p>
+            {new Date(created_at).toLocaleDateString()}
+        </p>
         </div>
+          
+
       </a>
 
 
@@ -34,7 +37,7 @@ const NewsSnippet = ({ newsItem }) => {
 
 const NewsPage = ({ news }) => {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap w-full">
       {news.map(newsItem => (
         <NewsSnippet key={newsItem.id} newsItem={newsItem} />
       ))}

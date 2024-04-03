@@ -10,7 +10,7 @@ async function getAllPlayers(): Promise<{ allPlayers: players[] }> {
 }
 
 async function getAllNews() : Promise<{ allNews: any; error: any }> {
-  const { data, error } = await supabase.from('news').select('*').order('updated_at', { ascending: false });
+  const { data, error } = await supabase.from('news').select('*').eq('published', true).order('updated_at', { ascending: false });
   // console.log(data);
   return { allNews: data, error };
 }
