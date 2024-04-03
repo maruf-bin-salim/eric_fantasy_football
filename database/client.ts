@@ -17,7 +17,7 @@ async function getAllNews() : Promise<{ allNews: any; error: any }> {
 
 async function getNewsByPlayerID(playerID: number) {
   
-  const { data: newses, error: newsError } = await supabase.from('news').select('*');
+  const { data: newses, error: newsError } = await supabase.from('news').select('*').eq('published', true).order('updated_at', { ascending: false });
 
   let playerNews: any[] = [];
 
