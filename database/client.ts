@@ -15,6 +15,30 @@ async function getAllNews() : Promise<{ allNews: any; error: any }> {
   return { allNews: data, error };
 }
 
+async function getNewsByPlayerID(playerID: number) {
+  
+  const { data: newses, error: newsError } = await supabase.from('news').select('*');
+
+  let playerNews: any[] = [];
+
+  if (newses) {
+    newses.forEach(news => {
+      let tags = news.tags;
+      tags.forEach(tag => {
+        if (tag.id === playerID) {
+          playerNews.push(news);
+        }
+      })
+    })
+  }
+
+  return { news:playerNews, error: newsError }
+
+}
+
+
+
+
 async function getNewsById(id: string): Promise<{ news: any; error: any }>
 {
   const { data, error } = await supabase.from('news').select('*').eq('id', id);
@@ -243,4 +267,5 @@ export {
   getTopPlayersByPosition,
   getAllNews,
   getNewsById,
+  getNewsByPlayerID
 };

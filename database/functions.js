@@ -58,7 +58,7 @@ async function deleteAllPlayers() {
         .delete()
         .not('playerID', 'is', null)
 
-    return {data: playersDeleted, stats: statsDeleted};
+    return { data: playersDeleted, stats: statsDeleted };
 }
 
 async function deleteAllTeams() {
@@ -89,5 +89,5 @@ export {
     getMatchesCount,
     deleteAllPlayers,
     deleteAllTeams,
-    deleteAllMatches
+    deleteAllMatches,
 };

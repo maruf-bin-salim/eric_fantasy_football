@@ -2,6 +2,7 @@ import {
   getPlayerById,
   getMatchesByTeamID,
   getTeamByTeamID,
+  getNewsByPlayerID,
 } from "@/database/client";
 import { Player } from "@/types";
 
@@ -38,6 +39,28 @@ type Props = {
 
 export const revalidate = 0;
 
+const NewsSnippet = ({ newsItem }) => {
+  const { title, content, cover_photo_url, created_at } = newsItem;
+
+  return (
+    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+      <a href={`/news/${newsItem.id}`}>
+        <img className="w-full" src={cover_photo_url} alt="News Cover" />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{title}</div>
+        <p>
+            {new Date(created_at).toLocaleDateString()}
+        </p>
+        </div>
+          
+
+      </a>
+
+
+    </div>
+  );
+};
+
 export default async function Player({
   params,
 }: {
@@ -54,6 +77,8 @@ export default async function Player({
   );
 
   const { teamData: teamInfo } = await getTeamByTeamID(playerData.teamID);
+
+  const { news } = await getNewsByPlayerID(playerData.playerID);
 
   function formatPlayerWithStats(playerData: players, playerStat: stats[]) {
     // Filter the stats for the given player
@@ -175,11 +200,10 @@ export default async function Player({
                     )}
                     <div
                       className={`font-bold tabular-nums tracking-tight 
-                                          ${
-                                            playerData.lastMarketChange < 0
-                                              ? "text-red-500 dark:text-red-400"
-                                              : "text-green-600 dark:text-green-400"
-                                          }`}
+                                          ${playerData.lastMarketChange < 0
+                          ? "text-red-500 dark:text-red-400"
+                          : "text-green-600 dark:text-green-400"
+                        }`}
                     >
                       {formatMoney(playerData.lastMarketChange)}
                     </div>
@@ -229,11 +253,10 @@ export default async function Player({
                     )}
                     <div
                       className={`text-xs font-bold tabular-nums tracking-tight 
-                                          ${
-                                            playerData.lastMarketChange < 0
-                                              ? "text-red-500 dark:text-red-400"
-                                              : "text-green-600 dark:text-green-400"
-                                          }`}
+                                          ${playerData.lastMarketChange < 0
+                          ? "text-red-500 dark:text-red-400"
+                          : "text-green-600 dark:text-green-400"
+                        }`}
                     >
                       {formatMoney(playerData.lastMarketChange)}
                     </div>
@@ -354,7 +377,13 @@ export default async function Player({
         <TabsContent
           value="noticias"
           className="overflow-visible mx-auto"
-        ></TabsContent>
+        >
+          <div className="flex flex-wrap w-full">
+            {news.map(newsItem => (
+              <NewsSnippet key={newsItem.id} newsItem={newsItem} />
+            ))}
+          </div>
+        </TabsContent>
       </Tabs>
     </div>
   );
