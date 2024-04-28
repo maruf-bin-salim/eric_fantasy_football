@@ -9,6 +9,8 @@ import {
 import MyTeamLineup from "@/app/components/myTeam/MyTeamLineup";
 import MyTeams from "../components/myTeam/MyTeams";
 import Authentication from "../components/auth/Auth";
+import { useEffect, useState } from "react";
+import { supabase } from "@/database/supabase";
 
 export const revalidate = 0;
 
@@ -118,6 +120,7 @@ function formatAndSortPlayerData(
 }
 
 export default async function MyTeamPage() {
+  
   const { myTeams } = await getMyTeams();
 
   // Extract player IDs from myTeams
@@ -139,11 +142,7 @@ export default async function MyTeamPage() {
     myTeams
   );
 
-  return (
-    <Authentication>
-
-    </Authentication>
-  )
+  
 
   return (
     <>
