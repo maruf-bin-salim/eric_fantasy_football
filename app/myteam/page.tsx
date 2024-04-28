@@ -8,8 +8,10 @@ import {
 
 import MyTeamLineup from "@/app/components/myTeam/MyTeamLineup";
 import MyTeams from "../components/myTeam/MyTeams";
+import Authentication from "../components/auth/Auth";
 
 export const revalidate = 0;
+
 
 interface PlayerWithStatsAndPoints extends players {
   pointsData: {
@@ -136,6 +138,12 @@ export default async function MyTeamPage() {
     finishedMatches,
     myTeams
   );
+
+  return (
+    <Authentication>
+
+    </Authentication>
+  )
 
   return (
     <>

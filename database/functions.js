@@ -78,7 +78,6 @@ async function deleteAllMatches() {
 }
 
 
-
 export {
     addPlayers,
     addStats,

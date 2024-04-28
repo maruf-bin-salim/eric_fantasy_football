@@ -36,9 +36,6 @@ async function getNewsByPlayerID(playerID: number) {
 
 }
 
-
-
-
 async function getNewsById(id: string): Promise<{ news: any; error: any }>
 {
   const { data, error } = await supabase.from('news').select('*').eq('id', id);
@@ -114,7 +111,6 @@ async function fetchStatsForMyTeamsPlayers(playerIds: number[]) {
     console.error('Error fetching stats:', error);
     return [];
   }
-
   return stats;
 }
 
@@ -132,6 +128,9 @@ async function fetchMyTeamPlayers(playerIds: number[]) {
   return players;
 }
 
+async function deleteOrAddPlayer(playerID: number) {
+  
+}
 async function getPlayerById(playerID: number) {
   // if (!playerID) return { data: null, error: "No playerID provided" };
   const { data: playerData, error } = await supabase
@@ -161,8 +160,6 @@ async function getPlayerById(playerID: number) {
   };
 }
 
-
-
 async function getPlayersByTeamID(
   teamID: number
 ): Promise<{ data: players[] | null; error: string | null }> {
@@ -183,6 +180,7 @@ interface Player {
   points: number;
   // Add other fields as necessary
 }
+
 
 async function getTopPlayersByPosition(): Promise<{ topPlayers: players[] }> {
   const positions = [1, 2, 3, 4, 5]; 
@@ -247,7 +245,6 @@ async function getFinishedMatches(): Promise<{ finishedMatches: matches[] }> {
 
     return { finishedMatches: finishedMatches as matches[] };
 }
-
 
 
 export {
