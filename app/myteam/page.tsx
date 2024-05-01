@@ -11,7 +11,8 @@ import MyTeams from "../components/myTeam/MyTeams";
 import Authentication from "../components/auth/Auth";
 import { useEffect, useState } from "react";
 import { supabase } from "@/database/supabase";
-
+import Link from 'next/link';
+import Squad from "../sqauds/page";
 export const revalidate = 0;
 
 
@@ -23,6 +24,8 @@ interface PlayerWithStatsAndPoints extends players {
     averageVisitorPoints: number;
   };
 }
+
+
 
 function formatAndSortPlayerData(
   players: players[],
@@ -120,7 +123,7 @@ function formatAndSortPlayerData(
 }
 
 export default async function MyTeamPage() {
-  
+
   const { myTeams } = await getMyTeams();
 
   // Extract player IDs from myTeams
@@ -142,7 +145,7 @@ export default async function MyTeamPage() {
     myTeams
   );
 
-  
+
 
   return (
     <>
@@ -150,6 +153,12 @@ export default async function MyTeamPage() {
       {/* <pre>{JSON.stringify(stats.slice(0, 30), null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(teamsWithFormattedAndCalculatedData[0].players[0].stats, null, 2)}</pre> */}
       {/* <MyTeamLineup teamPlayers={playersWithStats} /> */}
+      <Link href="/squads">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+          Create Squad
+        </button>
+      </Link>
+
       <MyTeams
         teams={teamsWithFormattedAndCalculatedData}
         matches={matchesData}
