@@ -2,14 +2,14 @@
 import { getAllPlayers } from '@/database/client';
 import React, { useEffect, useState } from 'react';
 
-export default function Squad({}) {
-  const [players, setPlayers] = useState([]); 
+export default function Squad({ }) {
+  const [players, setPlayers] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchPlayers = async () => {
-      const { allPlayers } = await getAllPlayers(); 
+      const { allPlayers } = await getAllPlayers();
       setPlayers(allPlayers);
     };
 
@@ -17,13 +17,17 @@ export default function Squad({}) {
   }, []);
 
   const addPlayer = player => {
-    if (selectedPlayers.length < 26 && !selectedPlayers.some(p => p.id === player.id)) {
-      setSelectedPlayers(prev => [...prev, player]); 
+    if (selectedPlayers.length < 26 && !selectedPlayers.some(p => p.playerID === player.playerID)) {
+      setSelectedPlayers(prev => [...prev, player]);
     }
   };
 
+
   const removePlayer = playerId => {
-    setSelectedPlayers(prev => prev.filter(p => p.id !== playerId));
+    setSelectedPlayers(prev => {
+      const newPlayers = prev.filter(p => p.playerID !== playerId);
+      return newPlayers;
+    });
   };
 
   const filteredPlayers = players.filter(player =>
@@ -62,6 +66,7 @@ export default function Squad({}) {
               key={player.id}
               className="cursor-pointer p-2 hover:bg-gray-100"
               onClick={() => addPlayer(player)}
+
             >
               {player.name}
             </li>
@@ -78,12 +83,12 @@ export default function Squad({}) {
         <div className="text-sm font-medium text-black-300">You have selected {selectedPlayers.length} players out of a maximum of 26</div>
         <ul className="mt-2">
           {selectedPlayers.map(player => (
-            <li key={player.id} className="flex justify-between text-black items-center bg-gray-300 p-2 rounded-md mb-1">
+            <li key={player.playerID} className="flex justify-between text-black items-center bg-gray-300 p-2 rounded-md mb-1">
               <div>
                 <img src={player.image} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                {player.name} - {player.teamName} {player.position} - 
+                {player.name} - {player.teamName} {player.position} -
               </div>
-              <button onClick={() => removePlayer(player.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+              <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
                 Remove
               </button>
             </li>
