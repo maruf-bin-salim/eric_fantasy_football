@@ -69,9 +69,6 @@ export default function Squad() {
 
     const playerIDs = selectedPlayers.map(player => ({
       playerID: player.playerID,
-      teamName: player.teamName,
-      position: player.position,
-      image: player.image,
     }));
 
     const newSquad = {

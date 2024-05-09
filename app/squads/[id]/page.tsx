@@ -40,13 +40,13 @@ const SquadPage = () => {
 
   useEffect(() => {
     const fetchSquadData = async () => {
-     
-        const squadData = await getSquadById(id);
-        if (squadData) {
-          setSquadName(squadData.squadName);
-          setSquadPlayers(squadData.playersIDS || []);
-        }
+
+      const squadData = await getSquadById(id);
+      if (squadData) {
+        setSquadName(squadData.squadName);
+        setSquadPlayers(squadData.playersIDS || []);
       }
+    }
     if (id) {
       fetchSquadData();
     }
@@ -69,6 +69,7 @@ const SquadPage = () => {
   );
 
   const saveSquad = async () => {
+
     if (!squadName) {
       setError('Squad name must be provided');
       return;
@@ -83,8 +84,7 @@ const SquadPage = () => {
 
     const playerIDs = selectedPlayers.map(player => ({
       playerID: player.playerID,
-      teamName: player.teamName,
-      position: player.position,
+      
     }));
 
     const newSquad = {
@@ -92,10 +92,10 @@ const SquadPage = () => {
       squadName: squadName,
       playersIDS: playerIDs,
     };
+    console.log("newsquad", newSquad)
     await updateSquad(newSquad);
 
-    setSquadName('');
-    setSelectedPlayers([]);
+    
   };
 
   return (
@@ -163,7 +163,7 @@ const SquadPage = () => {
         </ul>
       </div>
       <div className="mt-4">
-      
+
         <ul className="mt-2">
           {selectedPlayers.map(player => (
             <li key={player.playerID} className="flex justify-between text-black items-center bg-gray-300 p-2 rounded-md mb-1">

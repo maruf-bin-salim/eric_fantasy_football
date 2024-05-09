@@ -295,18 +295,12 @@ async function getSquadById(squadID) {
 
 
 async function updateSquad(squadID: string, squadName: string, playerIDs: string[]): Promise<void> {
-  try {
+  
     const { error } = await supabase
       .from('squads')
       .update({ squadName: squadName, playersIDS: playerIDs })
       .eq('squadID', squadID);
 
-    if (error) {
-      throw new Error('Failed to update squad');
-    }
-  } catch (error) {
-    throw error; // Rethrow the error for handling in the calling code
-  }
 }
 
 
