@@ -273,7 +273,40 @@ async function getAllSquads() {
     }));
 
     return { allSquads: formattedSquads, error: null };
-  
+}
+
+async function getSquadById(squadID) {
+  try {
+    const { data, error } = await supabase
+      .from('squads')
+      .select('*')
+      .eq('squadID', squadID)
+      .single();
+
+    if (error) {
+      throw error;
+    }
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+
+async function updateSquad(squadID: string, squadName: string, playerIDs: string[]): Promise<void> {
+  try {
+    const { error } = await supabase
+      .from('squads')
+      .update({ squadName: squadName, playersIDS: playerIDs })
+      .eq('squadID', squadID);
+
+    if (error) {
+      throw new Error('Failed to update squad');
+    }
+  } catch (error) {
+    throw error; // Rethrow the error for handling in the calling code
+  }
 }
 
 
@@ -298,4 +331,6 @@ export {
   createNewSquad,
   getAllUsers,
   getAllSquads,
+  updateSquad,
+  getSquadById
 };

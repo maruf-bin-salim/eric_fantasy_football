@@ -57,14 +57,11 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
   useEffect(() => {
     const fetchSquads = async () => {
       const { allSquads } = await getAllSquads();
-      console.log(allSquads);
       setSquads(allSquads || []);
     };
 
     fetchSquads();
   }, []);
-
-  console.log("sqads", squads);
 
   const handleTeamSelect = (teamId: string) => {
     const team = teams.find((team) => team.myTeamID.toString() === teamId);
@@ -112,7 +109,7 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
                 <div>{squad.players.length}/26</div>
 
                 <div>
-                  <Link href={`squads/editSquad/${squad.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+                  <Link href={`squads/${squad.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
                     Edit
                   </Link>
                   <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
