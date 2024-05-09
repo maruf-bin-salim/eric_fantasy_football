@@ -89,4 +89,5 @@ export {
     deleteAllPlayers,
     deleteAllTeams,
     deleteAllMatches,
+    getAllUsers,
 };

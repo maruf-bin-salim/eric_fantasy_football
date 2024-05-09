@@ -246,6 +246,36 @@ async function getFinishedMatches(): Promise<{ finishedMatches: matches[] }> {
     return { finishedMatches: finishedMatches as matches[] };
 }
 
+async function createNewSquad(newSquad: Squad): Promise<Squad> {
+  const { data: squad, error } = await supabase
+    .from("squads")
+    .insert([newSquad]);
+}
+
+
+async function getAllUsers() {
+    const { data: users, error } = await supabase
+      .from('users')
+      .select('*');
+    return { allUsers: users, error }
+}
+
+async function getAllSquads() {
+ 
+    const { data: squads, error } = await supabase
+      .from('squads')
+      .select('*'); 
+
+    const formattedSquads = squads.map(squad => ({
+      id: squad.squadID,
+      squadName: squad.squadName,
+      players: squad.playersIDS
+    }));
+
+    return { allSquads: formattedSquads, error: null };
+  
+}
+
 
 export {
   getAllPlayers,
@@ -264,5 +294,8 @@ export {
   getTopPlayersByPosition,
   getAllNews,
   getNewsById,
-  getNewsByPlayerID
+  getNewsByPlayerID,
+  createNewSquad,
+  getAllUsers,
+  getAllSquads,
 };

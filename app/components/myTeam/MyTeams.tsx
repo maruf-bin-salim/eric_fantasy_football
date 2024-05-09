@@ -28,6 +28,7 @@ import NextMatchesValueTable from "./MyTeamMatchesValueTable";
 import PointHistoryTable from "./MyTeamPointHistoryTable";
 import Authentication from "../auth/Auth";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { getAllSquads } from "@/database/client";
 
 
 interface PlayerWithStats extends players {
@@ -37,14 +38,33 @@ interface PlayerWithStats extends players {
 const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
   const [selectedTeam, setSelectedTeam] = useState(teams[0] || null);
   const [session, setSession] = useState(null);
+  const [squads, setSquads] = useState([]);
 
-  
+
+
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
-  }, [])
+    const data = supabase.auth.onAuthStateChange((event, session) => {
+      console.log(session);
+      setSession(session);
+    });
+    return () => {
+      data.data.subscription.unsubscribe();
+    };
 
+
+  }, []);
+
+  useEffect(() => {
+    const fetchSquads = async () => {
+      const { allSquads } = await getAllSquads();
+      console.log(allSquads);
+      setSquads(allSquads || []);
+    };
+
+    fetchSquads();
+  }, []);
+
+  console.log("sqads", squads);
 
   const handleTeamSelect = (teamId: string) => {
     const team = teams.find((team) => team.myTeamID.toString() === teamId);
@@ -53,7 +73,7 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
 
   const Logout = async () => {
     await supabase.auth.signOut();
-    
+
   }
 
   const selectedTeamPlayers = selectedTeam?.players || [];
@@ -74,6 +94,39 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
   else {
     return (
       <>
+        <Link href="/squads">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+            Create Squad
+          </button>
+        </Link>
+
+        <div className="container mx-auto">
+          <h1 className="text-2xl font-bold mb-4">Squads</h1>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="font-bold">Squad Name</div>
+            <div className="font-bold">Players</div>
+            <div className="font-bold">Actions</div>
+            {squads.map(squad => (
+              <React.Fragment key={squad.squadID}>
+                <div>{squad.squadName}</div>
+                <div>{squad.players.length}/26</div>
+
+                <div>
+                  <Link href={`squads/editSquad/${squad.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+                    Edit
+                  </Link>
+                  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Delete
+                  </button>
+                </div>
+
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+
+
+
         <div>
           <button onClick={Logout}>Logout</button>
         </div>

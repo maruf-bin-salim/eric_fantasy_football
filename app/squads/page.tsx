@@ -1,11 +1,18 @@
 'use client'
-import { getAllPlayers } from '@/database/client';
 import React, { useEffect, useState } from 'react';
+import { createNewSquad, getAllPlayers, getAllUsers } from '@/database/client';
+import { supabase } from '@/database/supabase';
 
-export default function Squad({ }) {
+
+export default function Squad() {
   const [players, setPlayers] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [squadName, setSquadName] = useState('');
+  const [error, setError] = useState('');
+  
+  const [session, setSession] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -16,36 +23,79 @@ export default function Squad({ }) {
     fetchPlayers();
   }, []);
 
+  
+
+
+  useEffect(() => {
+    const data = supabase.auth.onAuthStateChange((event, session) => {
+      console.log(session);
+      setSession(session);
+    });
+    return () => {
+      data.data.subscription.unsubscribe();
+    };
+  }, []);
+
+
   const addPlayer = player => {
     if (selectedPlayers.length < 26 && !selectedPlayers.some(p => p.playerID === player.playerID)) {
       setSelectedPlayers(prev => [...prev, player]);
     }
   };
 
-
   const removePlayer = playerId => {
-    setSelectedPlayers(prev => {
-      const newPlayers = prev.filter(p => p.playerID !== playerId);
-      return newPlayers;
-    });
+    setSelectedPlayers(prev => prev.filter(p => p.playerID !== playerId));
   };
 
+
+ 
+  
   const filteredPlayers = players.filter(player =>
     player.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const saveSquad = async () => {
+    if (!squadName) {
+      setError('Squad name must be provided');
+      return;
+    }
+
+    if (selectedPlayers.length === 0) {
+      setError('At least one player must be selected');
+      return;
+    }
+
+    setError('');
+
+    const playerIDs = selectedPlayers.map(player => player.playerID);
+    const newSquad = {
+      squadName: squadName,
+      playersIDS: playerIDs,
+      email: session?.user?.email,
+      
+    };
+      await createNewSquad(newSquad);
+  
+      setSquadName('');
+      setSelectedPlayers([]);
+  };
+
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold text-black">Create a Squad</h1>
+      {error && <div className="text-red-500">{error}</div>}
       <div>
         <label htmlFor="squadName" className="block text-sm font-medium text-black-300">
           Name
         </label>
+        
         <input
           type="text"
           id="squadName"
           className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none text-white sm:text-sm"
           placeholder="Enter squad name"
+          value={squadName}
+          onChange={e => setSquadName(e.target.value)}
         />
       </div>
       <div>
@@ -63,10 +113,9 @@ export default function Squad({ }) {
         <ul className="max-h-60 overflow-auto">
           {filteredPlayers.map(player => (
             <li
-              key={player.id}
+              key={player.playerID}
               className="cursor-pointer p-2 hover:bg-gray-100"
               onClick={() => addPlayer(player)}
-
             >
               {player.name}
             </li>
@@ -74,8 +123,9 @@ export default function Squad({ }) {
         </ul>
       </div>
       <button
+        onClick={saveSquad}
         type="button"
-        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 "
+        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
       >
         Save Changes
       </button>

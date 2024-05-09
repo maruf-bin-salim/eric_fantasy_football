@@ -153,11 +153,7 @@ export default async function MyTeamPage() {
       {/* <pre>{JSON.stringify(stats.slice(0, 30), null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(teamsWithFormattedAndCalculatedData[0].players[0].stats, null, 2)}</pre> */}
       {/* <MyTeamLineup teamPlayers={playersWithStats} /> */}
-      <Link href="/squads">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
-          Create Squad
-        </button>
-      </Link>
+     
 
       <MyTeams
         teams={teamsWithFormattedAndCalculatedData}
