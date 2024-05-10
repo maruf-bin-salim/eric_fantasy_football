@@ -28,7 +28,7 @@ import NextMatchesValueTable from "./MyTeamMatchesValueTable";
 import PointHistoryTable from "./MyTeamPointHistoryTable";
 import Authentication from "../auth/Auth";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { getAllSquads } from "@/database/client";
+import { deleteSquadById, getAllSquadsByEmail } from "@/database/client";
 
 
 interface PlayerWithStats extends players {
@@ -56,12 +56,17 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
 
   useEffect(() => {
     const fetchSquads = async () => {
-      const { allSquads } = await getAllSquads();
-      setSquads(allSquads || []);
+      const email = session?.user?.email;
+      if (email) {
+        const { allSquads } = await getAllSquadsByEmail(email);
+        setSquads(allSquads || []);
+      }
+      
     };
 
+
     fetchSquads();
-  }, []);
+  }, [session]);
 
   const handleTeamSelect = (teamId: string) => {
     const team = teams.find((team) => team.myTeamID.toString() === teamId);
@@ -72,6 +77,13 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
     await supabase.auth.signOut();
 
   }
+  const deleteSquad = async (squadId: string) => {
+    await deleteSquadById(squadId);
+    const updatedSquads = squads.filter((squad) => squad.id !== squadId);
+    setSquads(updatedSquads);
+  };
+
+  
 
   const selectedTeamPlayers = selectedTeam?.players || [];
   // console.log(selectedTeamPlayers);
@@ -104,7 +116,7 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
             <div className="font-bold">Players</div>
             <div className="font-bold">Actions</div>
             {squads.map(squad => (
-              <React.Fragment key={squad.squadID}>
+              <React.Fragment key={squad.id}>
                 <div>{squad.squadName}</div>
                 <div>{squad.players.length}/26</div>
 
@@ -112,7 +124,7 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
                   <Link href={`squads/${squad.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
                     Edit
                   </Link>
-                  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                  <button onClick={() => deleteSquad(squad.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Delete
                   </button>
                 </div>

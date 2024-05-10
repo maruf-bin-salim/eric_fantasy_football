@@ -9,14 +9,14 @@ async function getAllPlayers(): Promise<{ allPlayers: players[] }> {
   return { allPlayers: allPlayers as players[] };
 }
 
-async function getAllNews() : Promise<{ allNews: any; error: any }> {
+async function getAllNews(): Promise<{ allNews: any; error: any }> {
   const { data, error } = await supabase.from('news').select('*').eq('published', true).order('updated_at', { ascending: false });
   // console.log(data);
   return { allNews: data, error };
 }
 
 async function getNewsByPlayerID(playerID: number) {
-  
+
   const { data: newses, error: newsError } = await supabase.from('news').select('*').eq('published', true).order('updated_at', { ascending: false });
 
   let playerNews: any[] = [];
@@ -32,12 +32,11 @@ async function getNewsByPlayerID(playerID: number) {
     })
   }
 
-  return { news:playerNews, error: newsError }
+  return { news: playerNews, error: newsError }
 
 }
 
-async function getNewsById(id: string): Promise<{ news: any; error: any }>
-{
+async function getNewsById(id: string): Promise<{ news: any; error: any }> {
   const { data, error } = await supabase.from('news').select('*').eq('id', id);
   return { news: data, error };
 }
@@ -94,7 +93,7 @@ async function getMyTeams(): Promise<{ myTeams: myteams[] }> {
 
   if (error) {
     console.error('Error fetching myTeams:', error);
-    return { myTeams: [] }; 
+    return { myTeams: [] };
   }
 
   return { myTeams: data as myteams[] };
@@ -129,7 +128,7 @@ async function fetchMyTeamPlayers(playerIds: number[]) {
 }
 
 async function deleteOrAddPlayer(playerID: number) {
-  
+
 }
 async function getPlayerById(playerID: number) {
   // if (!playerID) return { data: null, error: "No playerID provided" };
@@ -183,20 +182,20 @@ interface Player {
 
 
 async function getTopPlayersByPosition(): Promise<{ topPlayers: players[] }> {
-  const positions = [1, 2, 3, 4, 5]; 
+  const positions = [1, 2, 3, 4, 5];
   let topPlayersByPosition: players[] = [];
 
   for (const position of positions) {
     const { data: topPlayers, error } = await supabase
       .from('players')
       .select('*')
-      .eq('positionID', position) 
-      .order('points', { ascending: false }) 
-      .limit(20); 
+      .eq('positionID', position)
+      .order('points', { ascending: false })
+      .limit(20);
 
     if (error) {
       console.error(`Error fetching top players for position ${position}:`, error);
-      continue; 
+      continue;
     }
 
     if (topPlayers) {
@@ -217,8 +216,8 @@ async function getAllMatches(): Promise<{ allMatches: matches[] }> {
 }
 
 async function getTeamByTeamID(teamID: number) {
-  
-  const { data: teamData} = await supabase
+
+  const { data: teamData } = await supabase
     .from("teams")
     .select("*")
     .eq("teamID", teamID);
@@ -243,7 +242,7 @@ async function getFinishedMatches(): Promise<{ finishedMatches: matches[] }> {
     .eq('matchState', 7)
     .order('matchDate', { ascending: true });
 
-    return { finishedMatches: finishedMatches as matches[] };
+  return { finishedMatches: finishedMatches as matches[] };
 }
 
 async function createNewSquad(newSquad: Squad): Promise<Squad> {
@@ -254,25 +253,25 @@ async function createNewSquad(newSquad: Squad): Promise<Squad> {
 
 
 async function getAllUsers() {
-    const { data: users, error } = await supabase
-      .from('users')
-      .select('*');
-    return { allUsers: users, error }
+  const { data: users, error } = await supabase
+    .from('users')
+    .select('*');
+  return { allUsers: users, error }
 }
 
-async function getAllSquads() {
- 
-    const { data: squads, error } = await supabase
-      .from('squads')
-      .select('*'); 
+async function getAllSquadsByEmail(email) {
+  const { data: squads, error } = await supabase
+    .from('squads')
+    .select('*')
+    .eq('email', email);
 
-    const formattedSquads = squads.map(squad => ({
-      id: squad.squadID,
-      squadName: squad.squadName,
-      players: squad.playersIDS
-    }));
+  const formattedSquads = squads.map(squad => ({
+    id: squad.squadID,
+    squadName: squad.squadName,
+    players: squad.playersIDS
+  }));
 
-    return { allSquads: formattedSquads, error: null };
+  return { allSquads: formattedSquads, error: null };
 }
 
 async function getSquadById(squadID) {
@@ -295,13 +294,27 @@ async function getSquadById(squadID) {
 
 
 async function updateSquad(squadID: string, squadName: string, playerIDs: string[]): Promise<void> {
-  
-    const { error } = await supabase
-      .from('squads')
-      .update({ squadName: squadName, playersIDS: playerIDs })
-      .eq('squadID', squadID);
+
+  const { error } = await supabase
+    .from('squads')
+    .update({ squadName: squadName, playersIDS: playerIDs })
+    .eq('squadID', squadID);
+
+  console.log(playerIDs);
 
 }
+
+const deleteSquadById = async (squadId) => {
+
+  const response = await supabase
+    .from('squads')
+    .delete()
+    .eq('squadID', squadId);
+
+  return response;
+
+};
+
 
 
 export {
@@ -324,7 +337,8 @@ export {
   getNewsByPlayerID,
   createNewSquad,
   getAllUsers,
-  getAllSquads,
+  getAllSquadsByEmail,
   updateSquad,
-  getSquadById
+  getSquadById,
+  deleteSquadById
 };

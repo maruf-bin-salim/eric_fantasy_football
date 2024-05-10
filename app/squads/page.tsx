@@ -134,16 +134,28 @@ export default function Squad() {
       </button>
       <div className="mt-4">
         <div className="text-sm font-medium text-black-300">You have selected {selectedPlayers.length} players out of a maximum of 26</div>
+        
         <ul className="mt-2">
           {selectedPlayers.map(player => (
-            <li key={player.playerID} className="flex justify-between text-black items-center bg-gray-300 p-2 rounded-md mb-1">
-              <div>
+            <li key={player.playerID} className="flex justify-between items-center bg-gray-300 p-2 rounded-md mb-1">
+              <div className="flex items-center flex-col">
                 <img src={player.image} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                {player.name} - {player.teamName} {player.position} -
+                <div>
+                  <div>{player.name}</div>
+                </div>
               </div>
-              <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
-                Remove
-              </button>
+              <div className="flex items-center justify-center">
+                <div>
+                  <img src='' alt='' style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                  <div>{player.teamName}</div>
+                </div>
+              </div>
+              <div className="flex items-center  gap-7 ">
+                <div>{player.position}</div>
+                <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+                  Remove
+                </button>
+              </div>
             </li>
           ))}
         </ul>

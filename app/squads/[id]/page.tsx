@@ -1,7 +1,7 @@
 'use client'
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { createNewSquad, getAllPlayers, getAllSquads, getSquadById, updateSquad } from '@/database/client';
+import { getAllPlayers, getSquadById, updateSquad } from '@/database/client';
 import { supabase } from '@/database/supabase';
 
 const SquadPage = () => {
@@ -14,6 +14,7 @@ const SquadPage = () => {
   const [error, setError] = useState('');
   const [session, setSession] = useState(null);
   const [squadPlayers, setSquadPlayers] = useState([]);
+  const [fetch, setFetch] = useState(false);
 
 
   useEffect(() => {
@@ -24,8 +25,6 @@ const SquadPage = () => {
 
     fetchPlayers();
   }, []);
-
-
 
   useEffect(() => {
     const data = supabase.auth.onAuthStateChange((event, session) => {
@@ -50,17 +49,22 @@ const SquadPage = () => {
     if (id) {
       fetchSquadData();
     }
-  }, [id]);
+  }, [id, fetch]);
+  
+
+  function getPlayerById(id) {
+    return players?.find(player => player.playerID === id);
+  }
 
 
   const addPlayer = player => {
     if (selectedPlayers.length < 26 && !selectedPlayers.some(p => p.playerID === player.playerID)) {
-      setSelectedPlayers(prev => [...prev, player]);
+      setSquadPlayers(prev => [...prev, player]);
     }
   };
 
   const removePlayer = playerId => {
-    setSelectedPlayers(prev => prev.filter(p => p.playerID !== playerId));
+    setSquadPlayers(prev => prev.filter(p => p.playerID !== playerId));
   };
 
 
@@ -75,27 +79,22 @@ const SquadPage = () => {
       return;
     }
 
-    if (selectedPlayers.length === 0) {
+    if (squadPlayers.length === 0) {
       setError('At least one player must be selected');
       return;
     }
 
     setError('');
 
-    const playerIDs = selectedPlayers.map(player => ({
+    const playerIDs = squadPlayers.map(player => ({
       playerID: player.playerID,
       
     }));
 
-    const newSquad = {
-      id: id,
-      squadName: squadName,
-      playersIDS: playerIDs,
-    };
-    console.log("newsquad", newSquad)
-    await updateSquad(newSquad);
-
     
+    await updateSquad(id,squadName,playerIDs);
+    setFetch(fetch => !fetch);
+
   };
 
   return (
@@ -150,34 +149,31 @@ const SquadPage = () => {
         <div className="text-sm font-medium text-black-300">You have selected {squadPlayers.length} players out of a maximum of 26</div>
         <ul className="mt-2">
           {squadPlayers.map(player => (
-            <li key={player.playerID} className="flex justify-between text-black items-center bg-gray-300 p-2 rounded-md mb-1">
-              <div>
-                <img src={player.image} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                {player.name} - {player.teamName} {player.position} -
+            <li key={player.playerID} className="flex justify-between items-center bg-gray-300 p-2 rounded-md mb-1">
+              <div className="flex items-center flex-col">
+                <img src={getPlayerById(player.playerID)?.image} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <div>
+                  <div>{getPlayerById(player.playerID)?.name}</div>
+                </div>
               </div>
-              <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
-                Remove
-              </button>
+              <div className="flex items-center justify-center">
+                <div>
+                  <img src={getPlayerById(player.playerID)?.teamID} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                  <div>{getPlayerById(player.playerID)?.teamName}</div>
+                </div>
+              </div>
+              <div className="flex items-center  gap-7 ">
+                <div>{getPlayerById(player.playerID)?.position}</div>
+                <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+                  Remove
+                </button>
+              </div>
             </li>
           ))}
         </ul>
-      </div>
-      <div className="mt-4">
 
-        <ul className="mt-2">
-          {selectedPlayers.map(player => (
-            <li key={player.playerID} className="flex justify-between text-black items-center bg-gray-300 p-2 rounded-md mb-1">
-              <div>
-                <img src={player.image} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                {player.name} - {player.teamName} {player.position} -
-              </div>
-              <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
-                Remove
-              </button>
-            </li>
-          ))}
-        </ul>
       </div>
+      
     </div>
   );
 };
