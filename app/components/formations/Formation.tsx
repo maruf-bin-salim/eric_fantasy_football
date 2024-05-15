@@ -1,11 +1,13 @@
-import { getAllPlayers } from '@/database/client';
-import { getPositionsForFormation } from '@/utils/formations';
+'use client'
 import React, { useEffect, useState } from 'react';
+import { getPositionsForFormation } from '@/utils/formations';
+import { getAllPlayers } from '@/database/client';
 
-const Formation = ({ formationName, onPlayerAdd, squadPlayers }) => {
+const Formation = ({ formationName, onPlayerAdd, squadPlayers, selectedPlayer, setSelectedPlayer }) => {
     const positions = getPositionsForFormation(formationName);
-    const [selectedPlayer, setSelectedPlayer] = useState(null);
     const [players, setPlayers] = useState([]);
+    const [selectedPosition, setSelectedPosition] = useState(null); // Track selected position
+    const [lineup, setLineup] = useState({}); // Define lineup state
 
     const positionTranslations = {
         "Portero": "Goalkeeper",
@@ -37,42 +39,53 @@ const Formation = ({ formationName, onPlayerAdd, squadPlayers }) => {
     }
 
     const handlePlayerClick = (positionId) => {
-        if (selectedPlayer) {
-            const playerToAdd = getPlayerById(selectedPlayer);
-            if (playerToAdd) {
-                const updatedLineup = {
-                    ...lineup,
-                    [positionId]: playerToAdd
-                };
-                onPlayerAdd(updatedLineup);
-                setSelectedPlayer(null);
-            }
+        setSelectedPosition(positionId); // Track selected position
+    };
+
+    const handlePlayerSelection = (playerId) => {
+        const playerToAdd = getPlayerById(playerId);
+        if (playerToAdd && selectedPosition !== null && positions[selectedPosition]) {
+            const updatedLineup = {
+                ...lineup,
+                [selectedPosition]: playerToAdd
+            };
+            onPlayerAdd(updatedLineup);
+            setSelectedPlayer(null); // Clear selected player after adding
+            setSelectedPosition(null); // Clear selected position after adding
         }
     };
 
-    
+    console.log("selectedPlayers", selectedPlayer);
 
 
     return (
         <div className="flex items-center">
             <div className="football-field-container" style={{ position: 'relative', width: '400px', height: '600px' }}>
                 <img src="/FieldLineup.png" alt="Football Field" className="absolute inset-0 w-full h-full object-cover" />
-                {positions.map(position => (
+                {positions.map((position, index) => (
                     <div
-                        key={position.id}
+                        key={index}
                         className="position-marker absolute"
-                        style={{ left: `${position.x}%`, top: `${position.y}%` }}
-                        onClick={() => handlePlayerClick(position.id)}
+                        style={{ left: `${position?.x}%`, top: `${position?.y}%` }}
+                        onClick={() => handlePlayerClick(index)}
                     >
                         <span role="img" aria-label="Position Marker" className="text-purple-500">🟣</span>
-                        <button onClick={() => handlePlayerClick(position.id)} className="text-white absolute top-0 left-0 w-full h-full bg-transparent">+</button>
-
+                        <button onClick={() => setSelectedPlayer(index)} className="text-white absolute top-0 left-0 w-full h-full bg-transparent">+</button>
                     </div>
                 ))}
+                {selectedPlayer !== null && selectedPosition !== null && positions[selectedPosition] && (
+                    <div
+                        className="selected-player-indicator"
+                        style={{ left: `${positions[selectedPosition].x}%`, top: `${positions[selectedPosition].y}%` }}
+                    >
+                        <img src={getPlayerById(selectedPlayer)?.image} alt="Selected Player" />
+                        <span>{getPlayerById(selectedPlayer)?.name}</span>
+                    </div>
+                )}
             </div>
 
-            {selectedPlayer && (
-                <div className="max-h-96 ml-8 overflow-y-auto">
+            {selectedPlayer !== null && (
+                <div className="max-h-96 ml-12 overflow-y-auto">
                     <ul className="divide-y divide-gray-200">
                         {squadPlayers.map(player => (
                             <li key={player.playerID} className="py-4 flex items-center space-x-4">
@@ -82,6 +95,8 @@ const Formation = ({ formationName, onPlayerAdd, squadPlayers }) => {
                                     <span className="text-sm text-gray-500">{getPlayerById(player.playerID)?.teamName}</span>
                                     <span className="text-sm text-gray-500">{translatePosition(getPlayerById(player.playerID)?.position)}</span>
                                 </div>
+
+                                <button onClick={() => handlePlayerSelection(player.playerID)} className="text-white bg-blue-500 px-2 py-1 rounded-md">Select</button>
                             </li>
                         ))}
                     </ul>

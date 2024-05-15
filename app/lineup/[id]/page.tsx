@@ -1,24 +1,28 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getSquadById } from '@/database/client';
+import { getAllPlayers, getSquadById } from '@/database/client';
 import Formation from '@/app/components/formations/Formation';
 
 const Lineup = () => {
     const [selectedFormation, setSelectedFormation] = useState('');
     const [squadPlayers, setSquadPlayers] = useState([]);
     const [lineup, setLineup] = useState({});
+    const [players, setPlayers] = useState([]);
+    const [selectedPlayer, setSelectedPlayer] = useState(null); // Define selectedPlayer state
 
     const { id } = useParams();
 
     useEffect(() => {
-        const fetchSquadData = async () => {
+        const fetchData = async () => {
             const squadData = await getSquadById(id);
+            const { allPlayers } = await getAllPlayers();
             if (squadData) {
                 setSquadPlayers(squadData.playersIDS || []);
             }
+            setPlayers(allPlayers);
         }
-        fetchSquadData();
+        fetchData();
     }, [id]);
 
     const handleSelectFormation = (e) => {
@@ -27,6 +31,8 @@ const Lineup = () => {
 
     const handlePlayerAdd = (updatedLineup) => {
         setLineup(updatedLineup);
+        console.log("setlineup", setLineup);
+        setSelectedPlayer(null); // Clear selected player after adding
     };
 
     return (
@@ -53,6 +59,8 @@ const Lineup = () => {
                             formationName={selectedFormation}
                             onPlayerAdd={handlePlayerAdd}
                             squadPlayers={squadPlayers}
+                            selectedPlayer={selectedPlayer} // Pass selectedPlayer state
+                            setSelectedPlayer={setSelectedPlayer} // Pass setSelectedPlayer function
                         />
                     )}
                 </div>
