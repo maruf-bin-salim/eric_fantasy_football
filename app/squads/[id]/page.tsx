@@ -58,7 +58,7 @@ const SquadPage = () => {
 
 
   const addPlayer = player => {
-    if (selectedPlayers.length < 26 && !selectedPlayers.some(p => p.playerID === player.playerID)) {
+    if (squadPlayers.length < 26 && !squadPlayers.some(p => p.playerID === player.playerID)) {
       setSquadPlayers(prev => [...prev, player]);
     }
   };
@@ -158,7 +158,7 @@ const SquadPage = () => {
               </div>
               <div className="flex items-center justify-center">
                 <div>
-                  <img src={getPlayerById(player.playerID)?.teamID} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                  <img src={getPlayerById(player.playerID)?.teamID}  style={{ width: '50px', height: '50px', marginRight: '10px' }} />
                   <div>{getPlayerById(player.playerID)?.teamName}</div>
                 </div>
               </div>

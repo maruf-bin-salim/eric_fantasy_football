@@ -61,10 +61,8 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
         const { allSquads } = await getAllSquadsByEmail(email);
         setSquads(allSquads || []);
       }
-      
+
     };
-
-
     fetchSquads();
   }, [session]);
 
@@ -83,7 +81,7 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
     setSquads(updatedSquads);
   };
 
-  
+
 
   const selectedTeamPlayers = selectedTeam?.players || [];
   // console.log(selectedTeamPlayers);
@@ -103,8 +101,9 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
   else {
     return (
       <>
+
         <Link href="/squads">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-6">
             Create Squad
           </button>
         </Link>
@@ -120,21 +119,26 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
                 <div>{squad.squadName}</div>
                 <div>{squad.players.length}/26</div>
 
-                <div>
-                  <Link href={`squads/${squad.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+                <div className="flex"> {/* Added flex container */}
+                  <Link href={`squads/${squad.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
                     Edit
                   </Link>
-                  <button onClick={() => deleteSquad(squad.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                  <button onClick={() => deleteSquad(squad.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2">
                     Delete
                   </button>
+                  <Link href={`lineup/${squad.id}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+                    Edit lineup
+                  </Link>
+                  <Link href='' className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                    View lineup
+                  </Link>
                 </div>
-
               </React.Fragment>
             ))}
           </div>
         </div>
 
-
+        
 
         <div>
           <button onClick={Logout}>Logout</button>

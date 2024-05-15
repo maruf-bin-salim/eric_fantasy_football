@@ -41,7 +41,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body className={`${inter.className}`}>
         <Navbar />
-        <main className="container max-w-6xl ">
+        <main className="container max-w-screen-2xl ">
           
 
           {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem> */}

@@ -10,9 +10,7 @@ export default function Squad() {
   const [searchTerm, setSearchTerm] = useState('');
   const [squadName, setSquadName] = useState('');
   const [error, setError] = useState('');
-  
   const [session, setSession] = useState(null);
-  const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
     const fetchPlayers = async () => {
