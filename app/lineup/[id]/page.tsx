@@ -31,8 +31,7 @@ const Lineup = () => {
 
     const handlePlayerAdd = (updatedLineup) => {
         setLineup(updatedLineup);
-        console.log("setlineup", setLineup);
-        setSelectedPlayer(null); // Clear selected player after adding
+        console.log("setlineup", lineup);
     };
 
     return (
