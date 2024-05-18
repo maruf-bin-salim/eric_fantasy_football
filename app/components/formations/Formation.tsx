@@ -6,8 +6,8 @@ import { getAllPlayers } from '@/database/client';
 const Formation = ({ formationName, onPlayerAdd, squadPlayers, selectedPlayer, setSelectedPlayer }) => {
     const positions = getPositionsForFormation(formationName);
     const [players, setPlayers] = useState([]);
-    const [selectedPosition, setSelectedPosition] = useState(null); // Track selected position
-    const [lineup, setLineup] = useState({}); // Define lineup state
+    const [selectedPosition, setSelectedPosition] = useState(null); 
+    const [lineup, setLineup] = useState({}); 
 
     const positionTranslations = {
         "Portero": "Goalkeeper",
@@ -36,11 +36,11 @@ const Formation = ({ formationName, onPlayerAdd, squadPlayers, selectedPlayer, s
 
     function getPlayerById(id) {
         const player = players?.find(player => player.playerID === id);
-        return player ? player : { name: '', image: '', position: '' }; // Return empty object if player doesn't exist
+        return player ? player : { name: '', image: '', position: '' }; 
     }
 
     const handlePlayerClick = (positionId) => {
-        setSelectedPosition(positionId); // Track selected position
+        setSelectedPosition(positionId); 
         setSelectedPlayer(squadPlayers[positionId]?.playerID);
     };
 
@@ -59,8 +59,8 @@ const Formation = ({ formationName, onPlayerAdd, squadPlayers, selectedPlayer, s
                     };
                     setLineup(updatedLineup);
                     onPlayerAdd(updatedLineup);
-                    setSelectedPlayer(null); // Clear selected player after adding
-                    setSelectedPosition(null); // Clear selected position after adding
+                    setSelectedPlayer(null); 
+                    setSelectedPosition(null); 
                 } else {
                     alert('Player is already in the lineup at another position');
                 }
@@ -85,7 +85,7 @@ const Formation = ({ formationName, onPlayerAdd, squadPlayers, selectedPlayer, s
                             {lineup[index] ? (
                                 <div className="relative trasnform right-2 bottom-2">
                                     <img src={lineup[index]?.image} alt="Selected Player" className="w-10 h-10 rounded-full" />
-                                    <span className='text-white text-sm absolute top-full left-1/2 transform -translate-x-1/2'>{getPlayerById(lineup[index].playerID)?.name.split(' ')[0]}</span> {/* Display the first name */}
+                                    <span className='text-white text-sm absolute top-full left-1/2 transform -translate-x-1/2'>{getPlayerById(lineup[index].playerID)?.name.split(' ')[0]}</span> 
                                 </div>
                             ) : (
                                 <>
@@ -105,7 +105,7 @@ const Formation = ({ formationName, onPlayerAdd, squadPlayers, selectedPlayer, s
                             <li key={player.playerID} className="py-4 flex items-center space-x-4">
                                 <img src={getPlayerById(player.playerID)?.image} className="w-10 h-10 rounded-full" />
                                 <div className="flex flex-col">
-                                    <span className="text-sm font-medium text-gray-900">{getPlayerById(player.playerID)?.name.split(' ')[0]}</span> {/* Display the first name */}
+                                    <span className="text-sm font-medium text-gray-900">{getPlayerById(player.playerID)?.name.split(' ')[0]}</span> 
                                     <span className="text-sm text-gray-500">{getPlayerById(player.playerID)?.teamName}</span>
                                     <span className="text-sm text-gray-500">{translatePosition(getPlayerById(player.playerID)?.position)}</span>
                                 </div>
