@@ -1,5 +1,5 @@
 'use client'
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { getAllPlayers, getAllTeams, getSquadById, updateSquad } from '@/database/client';
 
@@ -14,6 +14,8 @@ const SquadPage = () => {
   const [fetch, setFetch] = useState(false);
   const [teams, setTeams] = useState([]);
   const [lineup, setLineup] = useState([]);
+
+  const router = useRouter();
 
 
 
@@ -119,6 +121,7 @@ const SquadPage = () => {
       lineup: lineup
     });
     setFetch(prev => !prev);
+    router.push('/myteam');
 
   };
 
@@ -134,7 +137,7 @@ const SquadPage = () => {
         <input
           type="text"
           id="squadName"
-          className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none text-white sm:text-sm"
+          className="block w-full px-3 py-2 mt-1 text-white bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none sm:text-sm"
           value={squadName}
           onChange={e => setSquadName(e.target.value)}
         />
@@ -146,16 +149,16 @@ const SquadPage = () => {
         <input
           type="text"
           id="searchPlayer"
-          className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none text-white sm:text-sm"
+          className="block w-full px-3 py-2 mt-1 text-white bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none sm:text-sm"
           placeholder="Search players"
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
         />
-        <ul className="max-h-60 overflow-auto">
+        <ul className="overflow-auto max-h-60">
           {filteredPlayers.map(player => (
             <li
               key={player.playerID}
-              className="cursor-pointer p-2 hover:bg-gray-100"
+              className="p-2 cursor-pointer hover:bg-gray-100"
               onClick={() => addPlayer(player)}
             >
               {player.name}
@@ -166,7 +169,7 @@ const SquadPage = () => {
       <button
         onClick={saveSquad}
         type="button"
-        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
       >
         Update Changes
       </button>
@@ -174,23 +177,23 @@ const SquadPage = () => {
         <div className="text-sm font-medium text-black-300">You have selected {squadPlayers.length} players out of a maximum of 26</div>
         <ul className="mt-2">
           {squadPlayers.map(player => (
-            <li key={player.playerID} className="flex justify-between items-center bg-gray-300 p-2 rounded-md mb-1">
-              <div className="flex items-center flex-col">
+            <li key={player.playerID} className="flex items-center justify-between p-2 mb-1 bg-gray-300 rounded-md">
+              <div className="flex flex-col items-center">
                 <img src={getPlayerById(player.playerID)?.image} alt={player.image} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
                 <div>
                   <div>{getPlayerById(player.playerID)?.name}</div>
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div className='flex justify-center items-center flex-col'>
+                <div className='flex flex-col items-center justify-center'>
                   <img src={getTeamByTeamID(getPlayerById(player.playerID)?.teamID)}
                     style={{ width: '40px', height: '40px' }} />
                   <div>{getPlayerById(player.playerID)?.teamName}</div>
                 </div>
               </div>
-              <div className="flex items-center  gap-7 ">
+              <div className="flex items-center gap-7 ">
                 <div>{getPlayerById(player.playerID)?.position}</div>
-                <button onClick={() => removePlayer(player.playerID)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+                <button onClick={() => removePlayer(player.playerID)} className="px-2 py-1 font-bold text-white bg-red-500 rounded hover:bg-red-700">
                   Remove
                 </button>
               </div>

@@ -10,7 +10,8 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
     const [selectedPosition, setSelectedPosition] = useState(null);
     const [loadingSave, setLoadingSave] = useState(false);
     const [loadingClear, setLoadingClear] = useState(false);
-
+    const [filteredLineup, setFilteredLineup] = useState({});
+    
     const positionTranslations = {
         "Portero": "Goalkeeper",
         "Lateral izquierdo": "Left back",
@@ -36,11 +37,29 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
             const { lineup, error } = await getSquadById(squadID);
             if (lineup) {
                 setLineup(lineup);
+                setFilteredLineup(lineup);
             }
         };
         fetchLineup();
         fetchPlayers();
     }, [squadID]);
+
+
+    useEffect(()=>{
+        console.log('formation changed', positions);
+        let modifiedLineup = {...lineup};
+        for(let i = 0; i < positions.length; i++){
+            if(modifiedLineup[i]){
+                const playerPositionRole = translatePosition(modifiedLineup[i].position);
+                const selectedPositionRole = translatePosition(positions[i]?.role);
+                console.log(playerPositionRole, selectedPositionRole);
+                if (playerPositionRole !== selectedPositionRole) {
+                    delete modifiedLineup[i];
+                }
+            }
+        }
+        setFilteredLineup(modifiedLineup);
+    }, [formationName])
 
     const getPlayerById = (id) => {
         return players.find(player => player.playerID === id) || { name: '', image: '', position: '' };
@@ -68,6 +87,7 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
                     delete updatedLineup[playerToRemovePosition];
                 }
                 setLineup(updatedLineup);
+                setFilteredLineup(updatedLineup);
                 onPlayerAdd(updatedLineup);
                 setSelectedPlayer(null);
                 setSelectedPosition(null);
@@ -88,6 +108,7 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
     const clearLineup = async () => {
         setLoadingClear(true);
         setLineup({});
+        setFilteredLineup({});
         await updateSquad(squadID, { lineup: {} });
         alert('Lineup cleared successfully!');
         setLoadingClear(false);
@@ -96,37 +117,38 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
 
     return (
         <div>
+           
             <div>
-                <h1>{lineup.squadName}</h1>
+                <h1>{filteredLineup.squadName}</h1>
             </div>
             <div className='flex gap-8 px-10 mb-5'>
-                <button onClick={() => saveChanges(lineup)} className={`px-4 py-2 rounded-md ${loadingSave ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'} text-white`} disabled={loadingSave}>
+                <button onClick={() => saveChanges(filteredLineup)} className={`px-4 py-2 rounded-md ${loadingSave ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'} text-white`} disabled={loadingSave}>
                     {loadingSave ? 'Saving...' : 'Save Changes'}
                 </button>
                 <button onClick={() => clearLineup()} className={`px-4 py-2 rounded-md ${loadingClear ? 'bg-gray-500' : 'bg-red-500 hover:bg-red-600'} text-white`} disabled={loadingClear}>
                     {loadingClear ? 'Deleting...' : 'Delete Lineup'}
                 </button>
             </div>
-            <div className="flex items-center relative">
-                <div className="football-field-container relative" style={{ width: '400px', height: '600px' }}>
-                    <img src="/FieldLineup.png" alt="Football Field" className="absolute inset-0 w-full h-full object-cover" />
-                    <div className="position-absolute top-0 left-0 w-full h-full z-10">
+            <div className="relative flex items-center">
+                <div className="relative football-field-container" style={{ width: '400px', height: '600px' }}>
+                    <img src="/FieldLineup.png" alt="Football Field" className="absolute inset-0 object-cover w-full h-full" />
+                    <div className="top-0 left-0 z-10 w-full h-full position-absolute">
                         {positions.map((position, index) => (
                             <div
                                 key={index}
-                                className="position-marker absolute"
+                                className="absolute position-marker"
                                 style={{ left: `${position?.x}%`, top: `${position?.y}%` }}
                                 onClick={() => handlePlayerClick(index)}
                             >
-                                {lineup[index] ? (
+                                {filteredLineup[index] ? (
                                     <div className="relative transform right-2 bottom-2">
-                                        <img src={lineup[index]?.image} alt="Selected Player" className="w-10 h-10 rounded-full" />
-                                        <span className='text-white text-sm absolute top-full left-1/2 transform -translate-x-1/2'>{getPlayerById(lineup[index].playerID)?.name.split(' ')[0]}</span>
+                                        <img src={filteredLineup[index]?.image} alt="Selected Player" className="w-10 h-10 rounded-full" />
+                                        <span className='absolute text-sm text-white transform -translate-x-1/2 top-full left-1/2'>{getPlayerById(filteredLineup[index].playerID)?.name.split(' ')[0]}</span>
                                     </div>
                                 ) : (
                                     <>
                                         <span role="img" aria-label="Position Marker" className="text-purple-500">🟣</span>
-                                        <button onClick={() => setSelectedPlayer(index)} className="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent">+</button>
+                                        <button onClick={() => setSelectedPlayer(index)} className="absolute text-white transform -translate-x-1/2 -translate-y-1/2 bg-transparent top-1/2 left-1/2">+</button>
                                     </>
                                 )}
                             </div>
@@ -135,10 +157,10 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
                 </div>
 
                 {selectedPlayer !== null && (
-                    <div className="max-h-96 ml-12 overflow-y-auto absolute top-0 right-0">
+                    <div className="absolute top-0 right-0 ml-12 overflow-y-auto max-h-96">
                         <ul className="divide-y divide-gray-200">
                             {squadPlayers.map(player => (
-                                <li key={player.playerID} className="py-4 flex items-center space-x-4">
+                                <li key={player.playerID} className="flex items-center py-4 space-x-4">
                                     <img src={getPlayerById(player.playerID)?.image} className="w-10 h-10 rounded-full" />
                                     <div className="flex flex-col">
                                         <span className="text-sm font-medium text-gray-900">{getPlayerById(player.playerID)?.name.split(' ')[0]}</span>
@@ -146,7 +168,7 @@ const Formation = ({ formationName, squadID, onPlayerAdd, squadPlayers, selected
                                         <span className="text-sm text-gray-500">{translatePosition(getPlayerById(player.playerID)?.position)}</span>
                                     </div>
 
-                                    <button onClick={() => handlePlayerSelection(player.playerID)} className="text-white bg-blue-500 px-2 py-1 rounded-md">Select</button>
+                                    <button onClick={() => handlePlayerSelection(player.playerID)} className="px-2 py-1 text-white bg-blue-500 rounded-md">Select</button>
                                 </li>
                             ))}
                         </ul>
