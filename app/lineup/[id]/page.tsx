@@ -27,6 +27,7 @@ const Lineup = () => {
 
     const handleSelectFormation = (e) => {
         setSelectedFormation(e.target.value);
+        setLineup({});
     };
 
     const handlePlayerAdd = (updatedLineup) => {
@@ -35,14 +36,14 @@ const Lineup = () => {
 
     return (
         <div className="container mx-auto">
-            <h1 className="text-3xl font-bold mb-4">Football Squad Lineup</h1>
+            <h1 className="mb-4 text-3xl font-bold">Football Squad Lineup</h1>
             <div className="flex justify-center">
                 <div className="w-1/2 pr-4">
                     <div className="mb-4">
                         <select
                             value={selectedFormation}
                             onChange={handleSelectFormation}
-                            className="p-2 border border-gray-300 rounded-md w-full"
+                            className="w-full p-2 border border-gray-300 rounded-md"
                         >
                             <option value="4-3-3">4-3-3</option>
                             <option value="4-4-2">4-4-2</option>
@@ -50,6 +51,7 @@ const Lineup = () => {
                             <option value="4-2-4">4-2-4</option>
                         </select>
                     </div>
+
                     <Formation
                         formationName={selectedFormation}
                         onPlayerAdd={handlePlayerAdd}
