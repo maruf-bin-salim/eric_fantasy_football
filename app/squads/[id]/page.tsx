@@ -28,11 +28,11 @@ const SquadPage = () => {
 
   useEffect(() => {
     const fetchTeams = async () => {
-      const { allTeams } = await getAllTeams(); // Fetch all teams
-      setTeams(allTeams); // Set the teams state with the fetched data
+      const { allTeams } = await getAllTeams(); 
+      setTeams(allTeams); 
     };
 
-    fetchTeams(); // Call the fetchTeams function
+    fetchTeams(); 
   }, []);
 
   useEffect(() => {
