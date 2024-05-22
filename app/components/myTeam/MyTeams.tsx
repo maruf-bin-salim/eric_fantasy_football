@@ -129,9 +129,6 @@ const MyTeams = ({ teams, matches }: { teams: any; matches: matches[] }) => {
                   <Link href={`lineup/${squad.id}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
                     Edit lineup
                   </Link>
-                  <Link href='' className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                    View lineup
-                  </Link>
                 </div>
               </React.Fragment>
             ))}

@@ -86,6 +86,11 @@ async function getAllTeams(): Promise<{ allTeams: teams[] }> {
   return { allTeams: allTeams as teams[] };
 }
 
+// async function getTeamByTeamID(): Promise<{ allTeams: teams[] }> {
+//   const { data: allTeams } = await supabase.from("teams").select("*");
+//   return { allTeams: allTeams as teams[] };
+// }
+
 async function getMyTeams(): Promise<{ myTeams: myteams[] }> {
   const { data, error } = await supabase
     .from('myteams')
@@ -245,10 +250,23 @@ async function getFinishedMatches(): Promise<{ finishedMatches: matches[] }> {
   return { finishedMatches: finishedMatches as matches[] };
 }
 
+// async function createNewSquad(newSquad: Squad): Promise<Squad> {
+//   const { data: squad, error } = await supabase
+//     .from("squads")
+//     .insert([newSquad]);
+// }
+
 async function createNewSquad(newSquad: Squad): Promise<Squad> {
   const { data: squad, error } = await supabase
     .from("squads")
-    .insert([newSquad]);
+    .insert([newSquad])
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return squad;
 }
 
 
@@ -268,7 +286,8 @@ async function getAllSquadsByEmail(email) {
   const formattedSquads = squads.map(squad => ({
     id: squad.squadID,
     squadName: squad.squadName,
-    players: squad.playersIDS
+    players: squad.playersIDS,
+    lineup: squad.lineup,
   }));
 
   return { allSquads: formattedSquads, error: null };
@@ -293,16 +312,19 @@ async function getSquadById(squadID) {
 }
 
 
-async function updateSquad(squadID: string, squadName: string, playerIDs: string[]): Promise<void> {
-
+async function updateSquad(squadID: string, updates: Partial<Squad>): Promise<void> {
   const { error } = await supabase
     .from('squads')
-    .update({ squadName: squadName, playersIDS: playerIDs })
+    .update(updates)
     .eq('squadID', squadID);
 
-  console.log(playerIDs);
-
+  if (error) {
+    throw error;
+  }
 }
+
+
+
 
 const deleteSquadById = async (squadId) => {
 
@@ -340,5 +362,5 @@ export {
   getAllSquadsByEmail,
   updateSquad,
   getSquadById,
-  deleteSquadById
+  deleteSquadById,
 };

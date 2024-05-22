@@ -5,11 +5,11 @@ import { getAllPlayers, getSquadById } from '@/database/client';
 import Formation from '@/app/components/formations/Formation';
 
 const Lineup = () => {
-    const [selectedFormation, setSelectedFormation] = useState('');
+    const [selectedFormation, setSelectedFormation] = useState('4-3-3');
     const [squadPlayers, setSquadPlayers] = useState([]);
     const [lineup, setLineup] = useState({});
     const [players, setPlayers] = useState([]);
-    const [selectedPlayer, setSelectedPlayer] = useState(null); // Define selectedPlayer state
+    const [selectedPlayer, setSelectedPlayer] = useState(null);
 
     const { id } = useParams();
 
@@ -31,7 +31,6 @@ const Lineup = () => {
 
     const handlePlayerAdd = (updatedLineup) => {
         setLineup(updatedLineup);
-        console.log("setlineup", lineup);
     };
 
     return (
@@ -40,28 +39,25 @@ const Lineup = () => {
             <div className="flex justify-center">
                 <div className="w-1/2 pr-4">
                     <div className="mb-4">
-                        <h2 className="text-xl font-bold mb-2">Select Formation</h2>
                         <select
                             value={selectedFormation}
                             onChange={handleSelectFormation}
                             className="p-2 border border-gray-300 rounded-md w-full"
                         >
-                            <option value="">Select Formation</option>
                             <option value="4-3-3">4-3-3</option>
                             <option value="4-4-2">4-4-2</option>
                             <option value="3-4-3">3-4-3</option>
                             <option value="4-2-4">4-2-4</option>
                         </select>
                     </div>
-                    {selectedFormation && (
-                        <Formation
-                            formationName={selectedFormation}
-                            onPlayerAdd={handlePlayerAdd}
-                            squadPlayers={squadPlayers}
-                            selectedPlayer={selectedPlayer} // Pass selectedPlayer state
-                            setSelectedPlayer={setSelectedPlayer} // Pass setSelectedPlayer function
-                        />
-                    )}
+                    <Formation
+                        formationName={selectedFormation}
+                        onPlayerAdd={handlePlayerAdd}
+                        squadPlayers={squadPlayers}
+                        selectedPlayer={selectedPlayer}
+                        setSelectedPlayer={setSelectedPlayer}
+                        squadID={id}
+                    />
                 </div>
             </div>
         </div>

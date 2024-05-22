@@ -1,20 +1,20 @@
 'use client'
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { getAllPlayers, getSquadById, updateSquad } from '@/database/client';
-import { supabase } from '@/database/supabase';
+import { getAllPlayers, getAllTeams, getSquadById, updateSquad } from '@/database/client';
 
 const SquadPage = () => {
   const { id } = useParams();
 
   const [players, setPlayers] = useState([]);
-  const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [squadName, setSquadName] = useState('');
   const [error, setError] = useState('');
-  const [session, setSession] = useState(null);
   const [squadPlayers, setSquadPlayers] = useState([]);
   const [fetch, setFetch] = useState(false);
+  const [teams, setTeams] = useState([]);
+  const [lineup, setLineup] = useState([]);
+
 
 
   useEffect(() => {
@@ -27,15 +27,13 @@ const SquadPage = () => {
   }, []);
 
   useEffect(() => {
-    const data = supabase.auth.onAuthStateChange((event, session) => {
-      console.log(session);
-      setSession(session);
-    });
-    return () => {
-      data.data.subscription.unsubscribe();
+    const fetchTeams = async () => {
+      const { allTeams } = await getAllTeams(); // Fetch all teams
+      setTeams(allTeams); // Set the teams state with the fetched data
     };
-  }, []);
 
+    fetchTeams(); // Call the fetchTeams function
+  }, []);
 
   useEffect(() => {
     const fetchSquadData = async () => {
@@ -44,28 +42,51 @@ const SquadPage = () => {
       if (squadData) {
         setSquadName(squadData.squadName);
         setSquadPlayers(squadData.playersIDS || []);
+        setLineup(squadData.lineup || []);
       }
     }
     if (id) {
       fetchSquadData();
     }
   }, [id, fetch]);
-  
+  console.log("lineup", lineup);
+
+
 
   function getPlayerById(id) {
     return players?.find(player => player.playerID === id);
   }
 
+  function getTeamByTeamID(teamID) {
+    const team = teams.find(team => team.teamID === teamID);
+    return team ? team.image : '';
+  }
 
-  const addPlayer = player => {
+
+
+  const addPlayer = (player) => {
     if (squadPlayers.length < 26 && !squadPlayers.some(p => p.playerID === player.playerID)) {
       setSquadPlayers(prev => [...prev, player]);
     }
   };
 
-  const removePlayer = playerId => {
-    setSquadPlayers(prev => prev.filter(p => p.playerID !== playerId));
+
+  
+  const removePlayer = (playerID) => {
+    setSquadPlayers(prev => prev.filter(p => p.playerID !== playerID));
+    setLineup(prev => {
+      const updatedLineup = { ...prev };
+      Object.keys(updatedLineup).forEach(position => {
+        if (updatedLineup[position]?.playerID === playerID) {
+          console.log(`Removing player ${playerID} from lineup at position ${position}`);
+          delete updatedLineup[position];
+        }
+      });
+      console.log('Updated lineup after removal:', updatedLineup);
+      return updatedLineup;
+    });
   };
+
 
 
   const filteredPlayers = players.filter(player =>
@@ -88,12 +109,16 @@ const SquadPage = () => {
 
     const playerIDs = squadPlayers.map(player => ({
       playerID: player.playerID,
-      
+
     }));
 
-    
-    await updateSquad(id,squadName,playerIDs);
-    setFetch(fetch => !fetch);
+
+    await updateSquad(id, {
+      squadName,
+      playersIDS: playerIDs,
+      lineup: lineup
+    });
+    setFetch(prev => !prev);
 
   };
 
@@ -151,14 +176,15 @@ const SquadPage = () => {
           {squadPlayers.map(player => (
             <li key={player.playerID} className="flex justify-between items-center bg-gray-300 p-2 rounded-md mb-1">
               <div className="flex items-center flex-col">
-                <img src={getPlayerById(player.playerID)?.image} alt={player.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <img src={getPlayerById(player.playerID)?.image} alt={player.image} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
                 <div>
                   <div>{getPlayerById(player.playerID)?.name}</div>
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div>
-                  <img src={getPlayerById(player.playerID)?.teamID}  style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <div className='flex justify-center items-center flex-col'>
+                  <img src={getTeamByTeamID(getPlayerById(player.playerID)?.teamID)}
+                    style={{ width: '40px', height: '40px' }} />
                   <div>{getPlayerById(player.playerID)?.teamName}</div>
                 </div>
               </div>
@@ -173,7 +199,7 @@ const SquadPage = () => {
         </ul>
 
       </div>
-      
+
     </div>
   );
 };
